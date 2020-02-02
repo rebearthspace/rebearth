@@ -1,0 +1,36 @@
+body{
+    background-image: url('images/background.jpeg');
+    background-color: black;
+}
+.header {
+    color: white;
+    width: 100%;
+    font-family: "Lucida Console";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.countryFilter{
+    background-image: url('images/searchicon.png');
+    background-position: 10px 10px;
+    background-size: 23px;
+    background-repeat: no-repeat;
+    width: 20%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-left: 100px;
+    margin-top: 50px
+}
+footer {
+    font-family: "Lucida Console";
+    font-size: 10px;
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    height: 2.5rem; 
+}

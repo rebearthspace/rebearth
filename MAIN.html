@@ -1,0 +1,191 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="SCRIPT.js"></script>
+    <script>
+        var earth;
+        function initialize() {
+            earth = new WE.map('earth_div');
+            earth.setView([46.8011, 8.2266], 2);
+            WE.tileLayer('https://webglearth.github.io/webglearth2-offline/{z}/{x}/{y}.jpg', {
+                tileSize: 256,
+                bounds: [[-85, -180], [85, 180]],
+                minZoom: 0,
+                maxZoom: 200,
+                tms: true
+            }).addTo(earth);
+
+            var before = null;
+            requestAnimationFrame(function animate(now) {
+                var c = earth.getPosition();
+                var elapsed = before ? now - before : 0;
+                before = now;
+                earth.setCenter([c[0], c[1] + 0.1 * (elapsed / 30)]);
+                requestAnimationFrame(animate);
+            });
+        }
+    function filterFunction() {
+        var input, filter, ul, li, a, i, txtValue;
+        input = document.getElementById('countryFilter');
+        filter = input.value.toUpperCase();
+        ul = document.getElementById("continentUL");
+        li = ul.getElementsByTagName('li');
+        
+        for (i = 0; i < li.length; i++) {
+            a = li[i].getElementsByTagName("a")[0];
+            txtValue = a.textContent || a.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              li[i].style.display = "";
+            } else {
+              li[i].style.display = "none";
+            }
+        }
+    }
+  
+    
+</script>
+<style type="text/css">
+    html, body{
+        padding: 0;
+        margin: 0;
+    }
+    #earth_div{
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    } 
+</style>    
+<title>rebearth</title>
+<link rel="stylesheet" href="DESIGN.css">
+</head>
+
+<body onload="initialize()">
+<div class = "header">
+    <p><img src="https://i.imgur.com/DyZGdFv.png" alt="" style = "margin-left: -235%" /></p>
+    
+</div>
+<div class = "country_input">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <input type="text" id="countryFilter" name = "search" onkeyup="filterFunction()" placeholder="Search for names..">
+    <ul id="continentUL">
+        <li><a href="#" id ="ar" onclick="changeCountry(this.id)">Argentina</a></li>
+        <li><a href="#" id ="au" onclick="changeCountry(this.id)">Australia</a></li>
+        <li><a href="#" id ="at" onclick="changeCountry(this.id)">Austria</a></li>
+        <li><a href="#" id ="be" onclick="changeCountry(this.id)">Belgium</a></li>
+        <li><a href="#" id ="br" onclick="changeCountry(this.id)">Brazil</a></li>
+        <li><a href="#" id ="bg" onclick="changeCountry(this.id)">Bulgaria</a></li>
+        <li><a href="#" id ="ca" onclick="changeCountry(this.id)">Canada</a></li>
+        <li><a href="#" id ="cn" onclick="changeCountry(this.id)">China</a></li>
+        <li><a href="#" id ="co" onclick="changeCountry(this.id)">Colombia</a></li>
+        <li><a href="#" id ="cu" onclick="changeCountry(this.id)">Cuba</a></li>
+        <li><a href="#" id ="cz" onclick="changeCountry(this.id)">Czech Republic</a></li>
+        <li><a href="#" id ="eg" onclick="changeCountry(this.id)">Egypt</a></li>
+        <li><a href="#" id ="fr" onclick="changeCountry(this.id)">France</a></li>
+        <li><a href="#" id ="de" onclick="changeCountry(this.id)">Germany</a></li>
+        <li><a href="#" id ="gr" onclick="changeCountry(this.id)">Greece</a></li>
+        <li><a href="#" id ="hk" onclick="changeCountry(this.id)">Hong Kong</a></li>
+        <li><a href="#" id ="hu" onclick="changeCountry(this.id)">Hungary</a></li>
+        <li><a href="#" id ="in" onclick="changeCountry(this.id)">India</a></li>
+        <li><a href="#" id ="id" onclick="changeCountry(this.id)">Indonesia</a></li>
+        <li><a href="#" id ="ie" onclick="changeCountry(this.id)">Ireland</a></li>
+        <li><a href="#" id ="il" onclick="changeCountry(this.id)">Israel</a></li>
+        <li><a href="#" id ="it" onclick="changeCountry(this.id)">Italy</a></li>
+        <li><a href="#" id ="jp" onclick="changeCountry(this.id)">Japan</a></li>
+        <li><a href="#" id ="lv" onclick="changeCountry(this.id)">Latvia</a></li>
+        <li><a href="#" id ="lt" onclick="changeCountry(this.id)">Lithuania</a></li>
+        <li><a href="#" id ="my" onclick="changeCountry(this.id)">Malaysia</a></li>
+        <li><a href="#" id ="mx" onclick="changeCountry(this.id)">Mexico</a></li>
+        <li><a href="#" id ="ma" onclick="changeCountry(this.id)">Morocco</a></li>
+        <li><a href="#" id ="nl" onclick="changeCountry(this.id)">Netherlands</a></li>
+        <li><a href="#" id ="nz" onclick="changeCountry(this.id)">New Zealand</a></li>
+        <li><a href="#" id ="ng" onclick="changeCountry(this.id)">Nigeria</a></li>
+        <li><a href="#" id ="no" onclick="changeCountry(this.id)">Norway</a></li>
+        <li><a href="#" id ="ph" onclick="changeCountry(this.id)">Philippines</a></li>
+        <li><a href="#" id ="pl" onclick="changeCountry(this.id)">Poland</a></li>
+        <li><a href="#" id ="pt" onclick="changeCountry(this.id)">Portugal</a></li>
+        <li><a href="#" id ="ro" onclick="changeCountry(this.id)">Romania</a></li>
+        <li><a href="#" id ="ru" onclick="changeCountry(this.id)">Russia</a></li>
+        <li><a href="#" id ="sa" onclick="changeCountry(this.id)">Saudi Arabia</a></li>
+        <li><a href="#" id ="rs" onclick="changeCountry(this.id)">Serbia</a></li>
+        <li><a href="#" id ="sg" onclick="changeCountry(this.id)">Singapore</a></li>
+        <li><a href="#" id ="sk" onclick="changeCountry(this.id)">Slovakia</a></li>
+        <li><a href="#" id ="si" onclick="changeCountry(this.id)">Slovenia</a></li>
+        <li><a href="#" id ="za" onclick="changeCountry(this.id)">South Africa</a></li>
+        <li><a href="#" id ="kr" onclick="changeCountry(this.id)">South Korea</a></li>
+        <li><a href="#" id ="se" onclick="changeCountry(this.id)">Sweden</a></li>
+        <li><a href="#" id ="ch" onclick="changeCountry(this.id)">Switzerland</a></li>
+        <li><a href="#" id ="tw" onclick="changeCountry(this.id)">Taiwan</a></li>
+        <li><a href="#" id ="th" onclick="changeCountry(this.id)">Thailand</a></li>
+        <li><a href="#" id ="tr" onclick="changeCountry(this.id)">Turkey</a></li>
+        <li><a href="#" id ="ae" onclick="changeCountry(this.id)">UAE</a></li>
+        <li><a href="#" id ="ua" onclick="changeCountry(this.id)">Ukraine</a></li>
+        <li><a href="#" id ="gb" onclick="changeCountry(this.id)">United Kingdom</a></li>
+        <li><a href="#" id ="us" onclick="changeCountry(this.id)">United States</a></li>
+        <li><a href="#" id ="ve" onclick="changeCountry(this.id)">Venuzuela</a></li>
+
+    </ul>
+</div>
+<div class = "cards" id = "cards"> 
+    <img class="icon">   
+    <a>Title:</a> <p class="title"></p>
+    <a>Description:</a> <p class="description"></p>
+    <a>Author:</a> <p class="author"></p>
+    <hr>
+  </br>
+  <img class="icon1"> 
+    <a>Title:</a> <p class="title1"></p>
+    <a>Description:</a> <p class="description1"></p>
+    <a>Author:</a> <p class="author1"></p>
+    <hr>
+    </br>
+    <img class="icon2"> 
+    <a>Title:</a> <p class="title2"></p>
+    <a>Description:</a> <p class="description2"></p>
+    <a>Author:</a> <p class="author2"></p>
+</div>    
+<div id="earth_div"></div>
+
+</body>
+
+<footer>
+<a class = "cheese">by</a>
+<a class = "l_saleh" href="https://www.linkedin.com/in/saleh-s-72847512a/">Saleh Sandhu</a>
+<a class = "l_sehar" href="https://www.linkedin.com/in/seharsaleemi/">Sehar Saleemi</a>
+<a class = "l_mansib" href="https://www.linkedin.com/in/mansibrahman/">Mansib Rahman</a>
+</footer>
+    
+<!--    
+                                                       __________________
+                                                      {                  }
+                                                     {  IT'S UH ME LUIGI  }
+                                                      {    ______________}
+                                      %%%%%#,(.*       |  /                      
+                                    %%%%%####.#.*      | /                       
+                                   %%%%%%%%%#%&@&&%#   |/                        
+                                  &%%%&(//*.#,,,%.                              
+                                  (**/&@/**.##(//*,                             
+                                  (,*//@//@&(#(/*,..                            
+                                     @@(//*%&&&&&                               
+                                     &@%((/*,*,                                 
+                    ((,(,,,,,,,(/       %#//          *                         
+                        ,((((*,,/.##(####%&%###%######,*,.,,.                   
+                            *..**    %%%%%&*,%%%/**#(///*,..                    
+                                     &&&&&&&%%%%%.                              
+                                     &&&&&&%%%%%%(                              
+                                     &&&&&&%%%%%%                               
+                                     &&&&&&&&&%%#                               
+                                     #&&&&%%&&&%#                               
+                                     #&&&&%%&&%%(                               
+                                     %&&&&%%&&%%*                               
+                                     &&&&&%%&&%%                                
+                                     &&&&%%%&&%%                                
+                                     &&&&&@@@&@&&&%                             
+                                    @&&&&&&%%%%#%%%%                            
+                                     #&%@@@&&&&#((                              
+                                                                                
+-->
+</html>

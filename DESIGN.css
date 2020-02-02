@@ -1,0 +1,176 @@
+body{
+    background-image: url('images/background.jpeg');
+    background-color: black;
+}
+.header {
+    color: white;
+    width: 100%;
+    font-family: "Lucida Console";
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    cursor: pointer; 
+}
+#countryFilter{
+    background-image: url('images/searchicon.png');
+    background-position: 10px 10px;
+    background-size: 23px;
+    background-repeat: no-repeat;
+    width: 20%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    margin-bottom: 12px;
+    margin-left: 100px;
+    margin-top: 50px;
+    font-family: "Lucida Console";
+    
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    cursor: pointer; 
+}
+#continentUL{
+    
+    list-style-type: none;
+    font-family: "Lucida Console";
+    
+}
+#continentUL li{
+    border: 1px solid #ddd; 
+    margin-top: -1px; 
+    background-color: #f6f6f6; 
+    padding: 12px 20px 12px 40px;
+    text-decoration: none;
+    font-size: 18px; 
+    color: black; 
+    width: 20%;
+    display: block; 
+    margin-bottom: 12px;
+    margin-left: 100px;
+    margin-top: 95px;
+    
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    cursor: pointer; 
+    
+}
+.cards{
+    margin-top: -7.5%;
+    margin-left: 73%;
+    margin-bottom: 20%;
+    margin-right: 2%;
+    height: 90%;
+    width: 25%;
+    display: block;
+    background-color: white;
+    
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    
+    position: fixed;
+    top: 20%;
+    left: 0;
+    right: 0;
+    z-index: 2; 
+    cursor: pointer; 
+    overflow: scroll;
+}
+.cards a{
+    font-family: "Lucida Console";
+    text-align:center;
+    display: block;
+}
+
+footer {
+    font-family: "Lucida Console";
+    font-size: 10px;
+    color: white;
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 60%;
+    height: 2.5rem; 
+}
+.icon{
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.icon1{
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.icon2{
+    margin-top: 2%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+}
+.title{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.description{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.author{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.title1{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.description1{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.author1{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.title2{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.description2{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.author2{
+    font-family: "Lucida Console";
+    margin-left: 10%;
+    margin-right: 10%;
+}
